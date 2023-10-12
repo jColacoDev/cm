@@ -1,0 +1,150 @@
+.DragAndDrop{
+    max-width: 100%;
+
+    section{
+        font-size: 1.2em;
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        article{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+
+            &:first-of-type{
+                flex: 1;
+                padding: 1em;
+
+                figure{
+                    width: 7em;
+                    height: 7em;
+                    background-image: url("./../../imgs/dragAndDrop.png");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }    
+            }
+            
+            &:last-of-type{
+                flex: 2;
+
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    height: 100%;
+                    justify-content: center;
+                    align-items: flex-start;
+                    gap: 0.1em;
+                    width: calc(100% - 4em);
+
+                    li{
+                        display: flex;
+                        gap: 0.2em;
+                        padding: 0.2em 0.5em;
+                        text-align: start;
+                        background-color: #0000ff30;
+                        border-radius: 4px;
+                        text-overflow: ellipsis;
+                        overflow: hidden; 
+                        line-height: 1.2;
+
+                        &:nth-of-type(odd){
+                            background-color: #0059ff30;
+                        }
+
+                        &:first-of-type{
+                            background-color: #ff9d0030;
+                        }
+                        
+                        &:only-of-type{
+                            background-color: #ff000030;
+                        }
+
+                        span{
+                            line-height: 1.2;   
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #form-file-upload {
+        width: 100%;
+        min-width: 350px;
+        text-align: center;
+        position: relative;
+
+        > button{
+            font-size: 1.2em;
+            padding: 0.3em 2em;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            background-color: #00ff0730;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            transition-duration: .2s;
+            
+            &:hover{
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 7px -2px, rgba(0, 0, 0, 0.3) 0px 1px 2px -3px;
+            }
+            
+            &:disabled{
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 7px -2px, rgba(0, 0, 0, 0.3) 0px 1px 2px -3px;
+                background-color: #595959;
+                color: #c4c4c4;
+                cursor: not-allowed;
+            }
+
+            &[type=submit]{
+
+            }
+        }
+    }
+
+    #input-file-upload {
+        display: none;
+    }
+
+    #label-file-upload {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-width: 2px;
+        border-radius: 1em;
+        border-style: dashed;
+        border-color: #cbd5e1;
+        background-color: #f8fafc;
+        cursor: pointer;
+    }
+
+    #label-file-upload.drag-active {
+        background-color: #ffffff;
+    }
+
+    .upload-button {
+        cursor: pointer;
+        padding: 0.25em;
+        font-size: 1em;
+        border: none;
+        background-color: transparent;
+    }
+
+    .upload-button:hover {
+        text-decoration-line: underline;
+    }
+
+    #drag-file-element {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 1em;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+    }   
+}
